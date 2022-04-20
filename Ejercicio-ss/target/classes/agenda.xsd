@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="https://t5is.uv.mx/agenda"
+ xmlns:tns="https://t5is.uv.mx/agenda"
+ elementFormDefault="qualified">
+ <xs:element name="AgendaRequest">
+  <xs:complexType>
+      <xs:sequence>
+      <xs:element name="agenda1" type="xs:string"></xs:element>
+      <xs:element name="agenda2" type="xs:string"></xs:element>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+   <xs:element name="AgregarAResponse">
+  <xs:complexType>
+   <xs:sequence>
+       <xs:element name="respuesta" type="xs:string"/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+<xs:element name="RecuperaAgendaRequest"/>
+ <xs:element name="RecuperaAgendaResponse">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="agendaP" maxOccurs="unbounded">
+         <xs:complexType>
+           <xs:sequence>
+             <xs:element name="id" type="xs:int"></xs:element>
+             <xs:element name="nombre" type="xs:string"></xs:element>
+             <xs:element name="tarea" type="xs:string"></xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:element>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name="BorraAgendaRequest">
+  <xs:complexType>
+     <xs:sequence>
+        <xs:element name="identificador" type="xs:int"></xs:element>
+     </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="BorraAgendaResponse">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="respuesta" type="xs:boolean"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="ModificaAgendaRequest">
+  <xs:complexType>
+   <xs:sequence>
+        <xs:element name="id" type="xs:int"></xs:element>
+        <xs:element name="nombre" type="xs:string"></xs:element>
+        <xs:element name="tarea" type="xs:string"></xs:element>
+     </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="ModificaAgendaResponse">
+ <xs:complexType>
+  <xs:sequence>
+        <xs:element name="respuesta" type="xs:boolean"></xs:element>
+    </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+ 
+</xs:schema> 
